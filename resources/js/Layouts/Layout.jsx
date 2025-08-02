@@ -1,18 +1,16 @@
-import { Link } from "@inertiajs/react";
+import Nav from '../Components/Nav';
+import Footer from '../Components/Footer';
 
-export default function Layout( {children} ) {
+export default function Layout({ children }) {
     return (
         <>
-            <header>
-                <nav>
-                    <Link className="nav-link" href="/">Home</Link>
-                    <Link className="nav-link" href="/create">Create</Link>
-                </nav>
-            </header>
+            <div className="flex flex-col min-h-screen">
+                <Nav />
 
-            <main>
-                {children}
-            </main>
+                <main className="flex-1">{children}</main>
+
+                <Footer />
+            </div>
         </>
     );
 }
